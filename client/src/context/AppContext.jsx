@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { dummyProducts } from "../assets/assets.js";
+//import { dummyProducts } from "../assets/assets.js";
 
 axios.defaults.withCredentials = true;
 
@@ -39,7 +39,7 @@ export const AppContextProvider = ({children}) =>{
     }
 
    // fetch all products
-    /*const fetchProducts = async () =>{
+    const fetchProducts = async () =>{
         try {
             const {data} = await axios.get('/api/product/list');
             if(data.success){
@@ -51,10 +51,10 @@ export const AppContextProvider = ({children}) =>{
             toast.error(error.message)
             
         }
-    }*/
-    const fetchProducts = () => {
-        setProducts(dummyProducts);
     }
+    //const fetchProducts = () => {
+    //    setProducts(dummyProducts);
+    //}
     //fetch user auth status, user data and cart items
     const fetchUser = async ()=>{
         try {
